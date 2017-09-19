@@ -1,3 +1,3 @@
-/**
- * Created by drorb on 17/09/2017.
- */
+export default({
+    dummy: ()=> []
+});
