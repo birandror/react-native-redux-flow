@@ -5,6 +5,8 @@ import {createStore,applyMiddleware,combineReducers} from 'redux';
 import thunk from 'redux-thunk';
 import reducers from './store/reducers';
 
+import TopicScreen from './containers/TopicScreen'
+
 class App extends Component {
 
     render() {
@@ -12,9 +14,7 @@ class App extends Component {
         return (
             <Provider store={store}>
                 <View>
-                    <Text>
-                        Hello!
-                    </Text>
+                    <TopicScreen/>
                 </View>
             </Provider>
         )
