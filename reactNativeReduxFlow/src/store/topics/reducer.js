@@ -9,21 +9,24 @@ import _ from 'lodash';
 
 
 const INITIAL_STATE = {
-    a: {},
-    b: []
+    topicsByUrl: undefined,
+    selectedTopicUrls: []
 };
 
 export default function reduce(state = INITIAL_STATE, action = {}){
     switch (action.type) {
-        case types.ACTION_TYPE:
-            return {...state,a: action.newA};
+        case types.TOPICS_FETCHED:
+            return {...state,topicsByUrl: action.topicsByUrl};
         default:
             return state;
     }
 };
 
 //selectors
-export function getA(state) {
-    return state.topics.a;
+export function getTopicsByUrl(state) {
+    return state.topics.topicsByUrl;
 }
 
+export function getTopicsUrlArray(state){
+    return _.keys(state.topics.topicsByUrl);
+}
