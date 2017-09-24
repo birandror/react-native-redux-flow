@@ -133,5 +133,52 @@ export default connect(mapStateToProps)(<ComponentName>);
 
 10. import the component to your App.js file and use it
 
-Greate you are on the right track. You should now see "Hello World" on your screen 
+Greate you are on the right track. You should now see "Hello World" on your screen.
+
+11. It's time to create your first action. in {domain}/actions.js use this boler plate:
+
+```
+import * as types from './actionsTypes';
+
+export const <actionName> = (text) => {
+    return {
+        type: types.<ACTION_TYPE>,
+        payload: text
+    }
+};
+```
+You will need to add the <ACTION_TYPE> to your actionsTypes.js file
+
+12. Handle this action as a case in the reducer
+
+```
+case types.<ACTION_TYPE>:
+             return {...state,a: action.payload};
+```
+
+13. dispatch the action from the component
+
+```
+import * as <domain>Actions from '../store/<domain>/actions'
+
+class Game extends Component {
+
+    componentWillMount(){
+        this.props.dispatch(<domain>Actions.<actionName>("New Text"));
+    }
+...
+```
+You should now see "New Text" on the screen
+
+14. You can also use the following boler plate for async actions using thunk
+
+```
+export const asyncAction = (text) => {
+    return async(dispatch, getState) => {
+        console.log(`getState() = ${getState()}`);
+        const newText = await someAsyncfunction();
+        dispatch({type: types.<ACTION_TYPE>, payload: newText})
+    }
+};
+```
 
