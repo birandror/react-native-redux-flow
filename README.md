@@ -40,14 +40,20 @@
  
  export default App;
 ```
-5. Add the following Boiler plate to reducers.js
+5. Clear out index.iox and index.android and use:
+```
+import {AppRegistry} from 'react-native';
+import App from './src/app';
+AppRegistry.registerComponent('manager', () => App);
+```
+6. Add the following Boiler plate to reducers.js
 ```
 export default({
     dummy: ()=> []
 });
 ```
 
-6. Add a connected component to src/containers/ you can use the following boiler plate:  
+7. Add a connected component to src/containers/ you can use the following boiler plate:  
 ```
 import React, { Component } from 'react';
 import {View,Text} from 'react-native'
