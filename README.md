@@ -97,7 +97,14 @@ export const ACTION_TYPE = 'game.ACTION_TYPE';
 ```
 
 9. Add a connected component to src/containers/ you can use the following boiler plate:  
+
 ```
+// containers are "smart" react components that are aware of redux
+// they are connected to the redux store and listen on part of the app state
+// they use mapStateToProps to specify which parts and use selectors to read them
+// Smart components are not allowed to have any logic except dispatching actions.
+// avoid having view logic & local component state in them, use "dumb" components instead
+
 import React, { Component } from 'react';
 import {View,Text} from 'react-native'
 import { connect } from 'react-redux';
