@@ -51,12 +51,13 @@ AppRegistry.registerComponent('<project_name>', () => App);
 ```
 import <domain> from './<domain>/reducer';
 
-
 export default({
     <domain>: <domain>
 });
 ```
+
 7. Create your first <domain> reducer
+
 ```
 // reducers hold the store's state (the initialState object defines it)
 // reducers also handle plain object actions and modify their state (immutably) accordingly
@@ -67,20 +68,10 @@ export default({
 import * as types from './actionsTypes'
 import _ from 'lodash';
 
-
 const INITIAL_STATE = {
     a: "Hello World",
     b: []
 };
-```
-
-8. Add actionsTypes to actionsTypes.js
-```
-// strings should be unique across reducers so namespace them with the reducer name
-
-export const ACTION_TYPE = 'game.ACTION_TYPE';
-```
-
 
 export default function reduce(state = INITIAL_STATE, action = {}){
     switch (action.type) {
@@ -95,6 +86,14 @@ export default function reduce(state = INITIAL_STATE, action = {}){
 export function getA(state) {
     return state.<domain>.a;
 }
+```
+
+8. Add actionsTypes to actionsTypes.js
+
+```
+// strings should be unique across reducers so namespace them with the reducer name
+
+export const ACTION_TYPE = 'game.ACTION_TYPE';
 ```
 
 9. Add a connected component to src/containers/ you can use the following boiler plate:  
