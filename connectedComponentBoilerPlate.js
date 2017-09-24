@@ -8,21 +8,23 @@ import React, { Component } from 'react';
 import {View,Text} from 'react-native'
 import { connect } from 'react-redux';
 
+import * as <domain>Selectors from '../store/<domain>/reducer'
 
-class connectedComponentBoilerPlate extends Component {
+class <ComponentName> extends Component {
     componentWillMount(){} //when render
 
     render() {
         return (
-            <Text>Boiler Plate for class component</Text>
+            <Text>{this.props.a}</Text>
         );
     }
 }
 
 // which props do we want to inject, given the global store state?
 function mapStateToProps(state) {
-    return {};
+    return {
+        a: <domain>Selectors.gatA(state)
+    };
 }
 
-export default connect(mapStateToProps,null)(connectedComponentBoilerPlate);
-
+export default connect(mapStateToProps)(<ComponentName>);
