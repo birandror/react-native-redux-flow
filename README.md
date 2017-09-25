@@ -158,6 +158,8 @@ case types.<ACTION_TYPE>:
 
 13. dispatch the action from the component
 
+You can do it before the component gets rendered using componentWillMount
+
 ```
 import * as <domain>Actions from '../store/<domain>/actions'
 
@@ -169,6 +171,20 @@ class Game extends Component {
 ...
 ```
 You should now see "New Text" on the screen
+
+You can also do it with a Button
+
+```
+import {Button} from 'react-native'
+...
+<Button
+                    onPress={() => {<domain>Actions.<actionName>("New Text")}}
+                    title ="reset"
+                    color="#841584"
+                />
+...
+```
+Clicking on the buton will change the text to the new text
 
 14. You can also use the following boler plate for async actions using thunk
 
