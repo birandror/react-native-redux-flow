@@ -133,7 +133,7 @@ export default connect(mapStateToProps)(<ComponentName>);
 
 10. import the component to your App.js file and use it
 
-Greate you are on the right track. You should now see "Hello World" on your screen.
+Greate you are on the right track. Try running `react-native run-ios` You should now see "Hello World" on your screen.
 
 11. It's time to create your first action. in {domain}/actions.js use this boler plate:
 
